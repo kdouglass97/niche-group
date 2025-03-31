@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd apps/wine && npm install && npm run build",
+  "outputDirectory": "apps/wine/.next",
+  "installCommand": "cd apps/wine && npm install",
+  "framework": "nextjs"
+} 

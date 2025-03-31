@@ -100,9 +100,6 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.1.2
         version: 1.1.2(@types/react@19.0.10)(react@19.0.0)
-      '@repo/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
       '@supabase/supabase-js':
         specifier: ^2.38.4
         version: 2.49.4
@@ -134,12 +131,6 @@ importers:
         specifier: ^9.0.1
         version: 9.0.1
     devDependencies:
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
       '@types/node':
         specifier: ^22.13.10
         version: 22.13.10

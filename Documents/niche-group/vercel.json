@@ -1,6 +1,15 @@
 {
-  "buildCommand": "cd apps/wine && npm install && npm run build",
-  "outputDirectory": "apps/wine/.next",
-  "installCommand": "cd apps/wine && npm install",
-  "framework": "nextjs"
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/wine/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "rootDirectory": "apps/wine"
+      }
+    }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/apps/wine/$1" }
+  ]
 } 

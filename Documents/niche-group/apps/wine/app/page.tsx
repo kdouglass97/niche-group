@@ -140,9 +140,6 @@ export default function HomePage() {
               <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition">
                 Contact Us
               </Link>
-              <Link href="/test-mcp" className="text-sm text-muted-foreground hover:text-foreground transition font-semibold">
-                Test MCP
-              </Link>
             </div>
           </div>
         </div>

@@ -1,0 +1,189 @@
+Product Requirements Document (PRD)
+Project Overview
+We are creating multiple niche-specific community landing pages (e.g., wine, cigars, hotels, travel) to validate the hypothesis: specialized apps foster better engagement and monetization for communities. Each landing page acts independently but is centrally managed, sharing a unified backend (Supabase) to analyze user overlaps and behaviors.
+
+Goals & Objectives
+Validate community-specific market interest.
+
+
+Test user overlap across multiple niches.
+
+
+Establish baseline analytics for informed future product development.
+
+
+Deliver a polished, luxury-oriented user experience.
+
+
+
+Tech Stack
+Frontend:
+Next.js (latest)
+
+
+Shadcn UI
+
+
+Tailwind CSS
+
+
+Backend:
+Supabase (Managed PostgreSQL, Auth)
+
+
+Deployment & Hosting:
+Vercel (immediate deployment setup)
+
+
+Code Management:
+TurboRepo (free)
+
+
+PNPM (free)
+
+
+Analytics:
+PostHog
+
+
+
+Core Functionalities
+User Experience
+Individual landing pages per niche (wine, cigars, hotels, etc.).
+
+
+Elegant signup forms capturing email and basic user info (e.g., interests, demographic data).
+
+
+Users can independently sign up for multiple communities without data overwriting.
+
+
+Backend & Data Management
+Unified Supabase database to store user data centrally.
+
+
+Users identified uniquely (UUID) allowing membership in multiple niche segments without conflicts.
+
+
+Analytics & Tracking
+Integration with PostHog for user behavior analytics (heatmaps, user journeys, funnel analysis).
+
+
+
+Database Schema (Simplified)
+users (
+  user_id uuid primary key,
+  email text unique,
+  created_at timestamp
+)
+
+
+community_signups (
+  id uuid primary key,
+  user_id uuid references users(user_id),
+  community text,
+  signup_date timestamp
+)
+
+
+API & Security
+Modular REST API endpoints automatically provided by Supabase.
+
+
+Auth endpoints provided and secured via Supabase Auth.
+
+
+All API interactions use JWT (JSON Web Tokens) for security.
+
+
+
+Deployment & Infrastructure
+Monorepo setup using TurboRepo and PNPM.
+
+
+Immediate automatic deployment via Vercel from GitHub repository.
+
+
+Landing pages hosted on custom domains or subdomains.
+
+
+Single deployment environment (no separate dev/live environments initially).
+
+
+
+Design Language & UX/UI
+Theme: Clean Luxury (Lux)
+Visual Guidelines:
+Refined minimalism: ample whitespace, muted elegant color palettes (neutral colors accented subtly).
+
+
+Subtle animations and interactions enhancing the feeling of exclusivity and polish.
+
+
+Typography: Serif for headers (refined), Sans-serif for body text (clarity and legibility).
+
+
+Button & Interaction: Rounded corners, subtle shadows, smooth hover states.
+
+
+Target User Persona:
+Affluent, detail-oriented, appreciates craftsmanship and polish.
+
+
+Values exclusivity, elegance, and refined aesthetics.
+
+
+Willingness to pay for premium services and experiences.
+
+
+Tone & Voice (Copywriting):
+Polished, elegant, approachable yet sophisticated.
+
+
+Clear, concise language with subtle luxury branding.
+
+
+
+Definition of Done (DoD)
+Each landing page deploys successfully via Vercel.
+
+
+Users can signup independently to multiple communities without data issues.
+
+
+PostHog analytics accurately track user behavior.
+
+
+Database accurately reflects signup and interest data.
+
+
+UI matches established visual guidelines for luxury.
+
+
+API endpoints are secure, modular, documented, and perform efficiently.
+
+
+All code adheres strictly to best practices: clean, documented, reusable.
+
+
+
+Next Steps
+Set up monorepo with TurboRepo and PNPM.
+
+
+Immediate setup and deployment of frontend via Vercel.
+
+
+Backend setup and integration with Supabase.
+
+
+MVP build using Shadcn UI and Next.js with rapid feedback loop.
+
+
+Integrate PostHog analytics.
+
+
+Iterative refinement directly on deployed pages based on real-time feedback.
+
+
+

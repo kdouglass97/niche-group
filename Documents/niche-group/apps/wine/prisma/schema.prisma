@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String           @id @default(uuid()) @map("user_id")
+  email           String           @unique
+  firstName       String           @map("first_name")
+  lastName        String           @map("last_name")
+  receiveUpdates  Boolean          @default(false) @map("receive_updates")
+  createdAt       DateTime         @default(now()) @map("created_at")
+  communitySignups CommunitySignup[]
+
+  @@map("users")
+}
+
+model CommunitySignup {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  community   String
+  signupDate  DateTime @default(now()) @map("signup_date")
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@map("community_signups")
+  @@index([userId])
+  @@index([community])
+} 
